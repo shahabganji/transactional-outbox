@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Api", "Demo.TransactionalOutbox.Api\Demo.TransactionalOutbox.Api.csproj", "{72BA5560-8427-4ED3-8E16-3A4B5AF7CDA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.MessageRelay", "Demo.TransactionalOutbox.MessageRelay\Demo.TransactionalOutbox.MessageRelay.csproj", "{4CCF615C-487C-43F9-B39C-C3E6DE7CF875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.MessageRelay.Cosmos", "Demo.TransactionalOutbox.MessageRelay.Cosmos\Demo.TransactionalOutbox.MessageRelay.Cosmos.csproj", "{ACF83328-9942-45BA-BDA8-EE405986DBA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.FancyConsumer", "Demo.TransactionalOutbox.FancyConsumer\Demo.TransactionalOutbox.FancyConsumer.csproj", "{A8477E8F-E8DA-40C9-9229-FDF9388EEC32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{C6D18EFB-F6C2-45D4-9756-E054F670B3F9}"
+	ProjectSection(SolutionItems) = preProject
+		infra\docker-compose.yml = infra\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Domain", "Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj", "{CAECD5C0-4B9F-4DC6-BAF5-74FE80FBE824}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Application", "Demo.TransactionalOutbox.Application\Demo.TransactionalOutbox.Application.csproj", "{A237B9D4-DCA1-4220-9D99-7CF91E66B23B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Contracts", "Demo.TransactionalOutbox.Contracts\Demo.TransactionalOutbox.Contracts.csproj", "{CD3ADA20-83D7-42BC-AC9D-7BF4577110BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Infrastructure.Postgres", "Demo.TransactionalOutbox.Infrastructure.Postgres\Demo.TransactionalOutbox.Infrastructure.Postgres.csproj", "{67C24424-4C4C-4437-8636-C141848C21DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Infrastructure.Postgres.Migrator", "Demo.TransactionalOutbox.Infrastructure.Postgres.Migrator\Demo.TransactionalOutbox.Infrastructure.Postgres.Migrator.csproj", "{6BC72431-1141-4C1B-9D09-8B44CD820784}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{81770ED4-2AD4-47C5-A511-0689AC4F0ABD}"
+	ProjectSection(SolutionItems) = preProject
+		migrate.sh = migrate.sh
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72BA5560-8427-4ED3-8E16-3A4B5AF7CDA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BA5560-8427-4ED3-8E16-3A4B5AF7CDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BA5560-8427-4ED3-8E16-3A4B5AF7CDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BA5560-8427-4ED3-8E16-3A4B5AF7CDA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CCF615C-487C-43F9-B39C-C3E6DE7CF875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCF615C-487C-43F9-B39C-C3E6DE7CF875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CCF615C-487C-43F9-B39C-C3E6DE7CF875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCF615C-487C-43F9-B39C-C3E6DE7CF875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACF83328-9942-45BA-BDA8-EE405986DBA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACF83328-9942-45BA-BDA8-EE405986DBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACF83328-9942-45BA-BDA8-EE405986DBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF83328-9942-45BA-BDA8-EE405986DBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8477E8F-E8DA-40C9-9229-FDF9388EEC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8477E8F-E8DA-40C9-9229-FDF9388EEC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8477E8F-E8DA-40C9-9229-FDF9388EEC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8477E8F-E8DA-40C9-9229-FDF9388EEC32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAECD5C0-4B9F-4DC6-BAF5-74FE80FBE824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAECD5C0-4B9F-4DC6-BAF5-74FE80FBE824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAECD5C0-4B9F-4DC6-BAF5-74FE80FBE824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAECD5C0-4B9F-4DC6-BAF5-74FE80FBE824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A237B9D4-DCA1-4220-9D99-7CF91E66B23B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A237B9D4-DCA1-4220-9D99-7CF91E66B23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A237B9D4-DCA1-4220-9D99-7CF91E66B23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A237B9D4-DCA1-4220-9D99-7CF91E66B23B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3ADA20-83D7-42BC-AC9D-7BF4577110BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3ADA20-83D7-42BC-AC9D-7BF4577110BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD3ADA20-83D7-42BC-AC9D-7BF4577110BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD3ADA20-83D7-42BC-AC9D-7BF4577110BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67C24424-4C4C-4437-8636-C141848C21DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C24424-4C4C-4437-8636-C141848C21DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C24424-4C4C-4437-8636-C141848C21DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C24424-4C4C-4437-8636-C141848C21DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC72431-1141-4C1B-9D09-8B44CD820784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC72431-1141-4C1B-9D09-8B44CD820784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC72431-1141-4C1B-9D09-8B44CD820784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC72431-1141-4C1B-9D09-8B44CD820784}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

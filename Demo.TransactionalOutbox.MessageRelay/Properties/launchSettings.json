@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "Demo.TransactionalOutbox.MessageRelay": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
