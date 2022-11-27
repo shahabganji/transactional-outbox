@@ -1,8 +1,8 @@
+using Ardalis.GuardClauses;
 using Demo.TransactionalOutbox.Api.DataTransferObjects;
-using Demo.TransactionalOutbox.Contracts;
-using Demo.TransactionalOutbox.Domain.OrderAggregate.Commands;
-using Demo.TransactionalOutbox.Domain.OrderAggregate.Queries;
-using MassTransit;
+using Demo.TransactionalOutbox.Contracts.OrderAggregate.Commands;
+using Demo.TransactionalOutbox.Contracts.OrderAggregate.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Demo.TransactionalOutbox.Api.Controllers;
@@ -11,33 +11,33 @@ namespace Demo.TransactionalOutbox.Api.Controllers;
 [Route("[controller]")]
 public sealed class OrderController : ControllerBase
 {
+    private readonly IMediator _mediator;
+
+    public OrderController(IMediator mediator)
+    {
+        _mediator = Guard.Against.Null(mediator);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Post(
-        [FromBody] CreateOrderDto createOrderDto,
-        [FromServices] IRequestClient<CreateOrder> createOrderRequestClient)
+        [FromBody] CreateOrderDto createOrderDto)
     {
-        var result = await createOrderRequestClient.GetResponse<CreateOrderResult>(
-            new CreateOrder{ ProductId = createOrderDto.ProductId,Quantity= createOrderDto.Quantity });
+        var result = await _mediator.Send(
+            new CreateOrder { ProductId = createOrderDto.ProductId, Quantity = createOrderDto.Quantity });
         return Ok(result);
     }
 
     [HttpDelete("{orderId:guid}")]
-    public async Task<IActionResult> Delete(
-        [FromRoute] Guid orderId,
-        [FromServices] IRequestClient<CancelOrder> cancelOrderRequestClient)
+    public async Task<IActionResult> Delete([FromRoute] Guid orderId)
     {
-        var result =
-            await cancelOrderRequestClient.GetResponse<CancelOrderResult>(new CancelOrder { OrderId = orderId });
+        var result = await _mediator.Send(new CancelOrder { OrderId = orderId });
         return Ok(result);
     }
 
     [HttpGet("{orderId:guid}")]
-    public async Task<IActionResult> Get(
-        [FromRoute] Guid orderId,
-        [FromServices] IRequestClient<GetOrderStatus> getOrderRequestClient)
+    public async Task<IActionResult> Get([FromRoute] Guid orderId)
     {
-        var result = await getOrderRequestClient
-            .GetResponse<GetOrderStatusResult>(new GetOrderStatus { OrderId = orderId });
-        return Ok(new GetOrderStatusDto { Status = result.Message.Status });
+        var result = await _mediator.Send(new GetOrderStatus { OrderId = orderId });
+        return Ok(new GetOrderStatusDto { Status = result.Status });
     }
 }

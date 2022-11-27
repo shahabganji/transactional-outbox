@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="11.1.0" />
+    </ItemGroup>
+
 </Project>

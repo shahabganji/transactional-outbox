@@ -1,23 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>dotnet-Demo.TransactionalOutbox.Application-3BCFC660-5A8B-4C89-9BB8-3D28839B7F25</UserSecretsId>
-        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
-        <PackageReference Include="MassTransit.Analyzers" Version="8.0.8" />
-        <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.8" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-rc.2.22472.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Demo.TransactionalOutbox.Contracts\Demo.TransactionalOutbox.Contracts.csproj" />
       <ProjectReference Include="..\Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj" />
+      <ProjectReference Include="..\Demo.TransactionalOutbox.Infrastructure.EventEmitter\Demo.TransactionalOutbox.Infrastructure.EventEmitter.csproj" />
       <ProjectReference Include="..\Demo.TransactionalOutbox.Infrastructure.Postgres\Demo.TransactionalOutbox.Infrastructure.Postgres.csproj" />
     </ItemGroup>
     

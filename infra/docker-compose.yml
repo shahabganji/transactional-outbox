@@ -1,11 +1,11 @@
 version: "3.2"
 
 services:
-  rabbitmq:
+  message_broker:
     image: rabbitmq:3.9-management
     ports:
       - "5672:5672"
-      - "15672:15672"
+      - "15672:15672"  
   db:
     image: postgres:15.0
     ports:
@@ -13,6 +13,7 @@ services:
     environment:
       POSTGRES_USER: demo
       POSTGRES_PASSWORD: strong
+  
   pgadmin:
     image: dpage/pgadmin4
     ports:

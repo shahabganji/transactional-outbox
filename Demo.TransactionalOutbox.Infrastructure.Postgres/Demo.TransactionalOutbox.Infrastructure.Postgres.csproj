@@ -7,17 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj" />
+        <ProjectReference Include="..\Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
-      <PackageReference Include="FlexLabs.EntityFrameworkCore.Upsert" Version="6.0.2" />
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
+        <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+        <PackageReference Include="FlexLabs.EntityFrameworkCore.Upsert" Version="6.0.2" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Migrations" />
+        <Folder Include="Migrations" />
     </ItemGroup>
 
 </Project>

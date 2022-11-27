@@ -1,6 +1,6 @@
 using Demo.TransactionalOutbox.Domain.OrderAggregate;
 
-namespace Demo.TransactionalOutbox.Contracts;
+namespace Demo.TransactionalOutbox.Contracts.OrderAggregate.Responses;
 
 public class GetOrderStatusResult
 {

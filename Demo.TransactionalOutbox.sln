@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{8177
 		migrate.sh = migrate.sh
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Infrastructure.EventEmitter", "Demo.TransactionalOutbox.Infrastructure.EventEmitter\Demo.TransactionalOutbox.Infrastructure.EventEmitter.csproj", "{160CFF0F-A482-432C-A002-E676D4155086}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,5 +72,9 @@ Global
 		{6BC72431-1141-4C1B-9D09-8B44CD820784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BC72431-1141-4C1B-9D09-8B44CD820784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BC72431-1141-4C1B-9D09-8B44CD820784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160CFF0F-A482-432C-A002-E676D4155086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160CFF0F-A482-432C-A002-E676D4155086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160CFF0F-A482-432C-A002-E676D4155086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160CFF0F-A482-432C-A002-E676D4155086}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

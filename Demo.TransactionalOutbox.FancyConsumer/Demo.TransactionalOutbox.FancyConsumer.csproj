@@ -11,6 +11,11 @@
     <ItemGroup>
         <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.8" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-rc.2.22472.3" />
+        <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
         <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj" />
     </ItemGroup>
 </Project>

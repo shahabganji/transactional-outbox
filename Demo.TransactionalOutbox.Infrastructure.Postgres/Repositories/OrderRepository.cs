@@ -29,15 +29,6 @@ public sealed class OrderRepository : IRepository<Order>
     {
         var orderEntity = OrderEntity.From(aggregateRoot);
         
-        
-        // await _context.Orders.Upsert(orderEntity)
-        //     .On(x => new { x.Id, x.ProductId })
-        //     .WhenMatched(v => new OrderEntity()
-        //     {
-        //         Quantity = aggregateRoot.Amount
-        //     })
-        //     .RunAsync(cancellationToken);
-
         var alreadyExists = await _context.Orders.FindAsync(aggregateRoot.Id, cancellationToken);
         _context.Entry(orderEntity).State = alreadyExists is null
             ? EntityState.Added

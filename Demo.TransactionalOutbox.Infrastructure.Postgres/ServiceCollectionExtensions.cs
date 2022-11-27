@@ -11,13 +11,15 @@ namespace Demo.TransactionalOutbox;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddRepositories(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
-        services.AddScoped<IRepository<Order>, OrderRepository>();
-        services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<OrderContext>());
-
         services.AddDbContext<OrderContext>(
             builder => builder.UseNpgsql(configuration.GetConnectionString("Database")));
+
+        services.AddScoped<IRepository<Order>, OrderRepository>();
+        services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<OrderContext>());
 
         return services;
     }

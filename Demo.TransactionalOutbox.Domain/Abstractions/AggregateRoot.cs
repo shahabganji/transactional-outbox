@@ -5,7 +5,7 @@ public class AggregateRoot : IAggregateRoot
     public Guid Id { get; private set; }
     
     private readonly List<IDomainEvent> _domainEvents = new();
-    public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 
     protected AggregateRoot(): this(Guid.NewGuid())
     {
