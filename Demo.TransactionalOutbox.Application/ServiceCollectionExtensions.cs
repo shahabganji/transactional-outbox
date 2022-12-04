@@ -19,8 +19,7 @@ public static class ServiceCollectionExtensions
         services.AddHostedService<DatabaseMigratorHostedService>();
         services.AddMediatR(typeof(CreateOrderConsumer).Assembly);
 
-        services.AddRepositories(configuration)
-            .AddEventEmitter(configuration);
+        services.AddRepositories(configuration);
         
         return services;
     }

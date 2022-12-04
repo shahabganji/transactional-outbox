@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using Demo.TransactionalOutbox.Domain.Abstractions;
 using Demo.TransactionalOutbox.Infrastructure.Postgres;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -14,6 +15,11 @@ public sealed  class OrderContextFactory : IDesignTimeDbContextFactory<OrderCont
         var optionsBuilder = new DbContextOptionsBuilder<OrderContext>();
         optionsBuilder.UseNpgsql("Host=localhost; Database=orders; Username=demo; Password=strong;");
 
-        return new OrderContext(optionsBuilder.Options);
+        return new OrderContext(optionsBuilder.Options, new NullEventEmitter());
     }
 }
+
+public sealed class NullEventEmitter : IEventEmitter
+{
+    public Task Emit(IEnumerable<IDomainEvent> domainEvents) => Task.CompletedTask;
+} 

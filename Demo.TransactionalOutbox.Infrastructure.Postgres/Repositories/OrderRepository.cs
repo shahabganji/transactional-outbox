@@ -30,6 +30,8 @@ public sealed class OrderRepository : IRepository<Order>
         var orderEntity = OrderEntity.From(aggregateRoot);
         
         var alreadyExists = await _context.Orders.FindAsync(aggregateRoot.Id, cancellationToken);
+        
+        _context.AddDomainEventsForAggregate(aggregateRoot);
         _context.Entry(orderEntity).State = alreadyExists is null
             ? EntityState.Added
             : EntityState.Modified;

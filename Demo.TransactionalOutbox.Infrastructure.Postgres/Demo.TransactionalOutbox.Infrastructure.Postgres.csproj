@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj" />
+        <ProjectReference Include="..\Demo.TransactionalOutbox.Infrastructure.EventEmitter\Demo.TransactionalOutbox.Infrastructure.EventEmitter.csproj" />
     </ItemGroup>
 
     <ItemGroup>

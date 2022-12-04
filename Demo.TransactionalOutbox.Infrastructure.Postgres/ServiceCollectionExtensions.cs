@@ -20,6 +20,8 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<IRepository<Order>, OrderRepository>();
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<OrderContext>());
+        
+        services.AddEventEmitter(configuration);
 
         return services;
     }
