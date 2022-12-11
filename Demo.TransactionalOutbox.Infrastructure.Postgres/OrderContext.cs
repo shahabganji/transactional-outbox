@@ -2,7 +2,6 @@ using Ardalis.GuardClauses;
 using Demo.TransactionalOutbox.Domain.Abstractions;
 using Demo.TransactionalOutbox.Infrastructure.Postgres.Configurations;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Demo.TransactionalOutbox.Infrastructure.Postgres;
 
