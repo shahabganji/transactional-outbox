@@ -1,5 +1,6 @@
 using Demo.TransactionalOutbox.Domain.Abstractions;
 using Demo.TransactionalOutbox.Infrastructure.EventEmitter;
+using Demo.TransactionalOutbox.Infrastructure.Postgres;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,12 @@ public static class ServiceCollectionExtensions
             {
                 configurator.Host(configuration.GetConnectionString("MessageBroker"));
                 configurator.ConfigureEndpoints(context);
+            });
+            
+            mt.AddEntityFrameworkOutbox<OrderContext>(options=>
+            {
+                options.UsePostgres();
+                options.UseBusOutbox();
             });
         });
         

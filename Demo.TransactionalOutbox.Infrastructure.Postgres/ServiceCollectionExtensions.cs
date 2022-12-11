@@ -1,7 +1,6 @@
 using Demo.TransactionalOutbox.Domain.Abstractions;
 using Demo.TransactionalOutbox.Domain.OrderAggregate;
 using Demo.TransactionalOutbox.Infrastructure.Postgres;
-using Demo.TransactionalOutbox.Infrastructure.Postgres.Emitter;
 using Demo.TransactionalOutbox.Infrastructure.Postgres.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,14 +20,6 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<IRepository<Order>, OrderRepository>();
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<OrderContext>());
-
-        return services;
-    }
-    
-    public static IServiceCollection AddEventEmitter(
-        this IServiceCollection services, IConfiguration configuration)
-    {
-        services.AddScoped<IEventEmitter, EntityFrameworkEventEmitter>();
 
         return services;
     }
