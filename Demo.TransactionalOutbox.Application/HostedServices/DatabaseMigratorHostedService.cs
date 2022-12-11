@@ -1,6 +1,5 @@
 using Ardalis.GuardClauses;
 using Demo.TransactionalOutbox.Infrastructure.Postgres;
-using MassTransit.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
