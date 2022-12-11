@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ardalis.GuardClauses" Version="4.0.1" />
+      <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.31.2" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0-rc.2.22472.3" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0-rc.2.22472.3" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0-rc.2.22472.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Demo.TransactionalOutbox.Domain\Demo.TransactionalOutbox.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

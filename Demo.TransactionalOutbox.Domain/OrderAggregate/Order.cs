@@ -9,7 +9,7 @@ public class Order : AggregateRoot
     public Guid ProductId { get; init; }
     public OrderStatus Status { get; private set; }
 
-    public Order(Guid productId, int amount)
+    public Order(Guid productId, int amount, Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         Amount = amount;
         ProductId = productId;
@@ -22,7 +22,7 @@ public class Order : AggregateRoot
         Status = OrderStatus.Canceled;
         RaiseDomainEvent(new OrderCanceled(DateTimeOffset.Now, Id));
     }
-    
+
     public void Accept()
     {
         Status = OrderStatus.Accepted;

@@ -11,7 +11,7 @@ public class AggregateRoot : IAggregateRoot
     {
     }
 
-    private AggregateRoot(Guid id) => Id = id;
+    protected AggregateRoot(Guid id) => Id = id;
 
     public void RaiseDomainEvent(IDomainEvent domainEvent)
     {
