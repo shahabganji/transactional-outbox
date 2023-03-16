@@ -12,7 +12,7 @@ public sealed class CosmoOrderOutbox
 
     internal void SetOrderId(string orderId)
     {
-        id = $"Domain-Event-{orderId}-{Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()))}";
+        id = $"{nameof(IDomainEvent)}-{orderId}-{Convert.ToBase64String(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()))}";
         OrderId = orderId;
     }
     internal CosmoOrderOutbox(string type, IDomainEvent payload)
