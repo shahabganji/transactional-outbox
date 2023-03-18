@@ -26,9 +26,10 @@ public class MessageRelayFunction
     [Function("MessageRelayFunction")]
     public async Task Run([CosmosDBTrigger(
             databaseName: "ms_talk",
-            collectionName: "Orders",
+            collectionName: "orders",
             ConnectionStringSetting = "Database",
-            LeaseCollectionName = "leases")]
+            LeaseCollectionName = "leases",
+            CreateLeaseCollectionIfNotExists = true)]
         IReadOnlyList<JsonObject> inputs, FunctionContext context)
     {
         Guard.Against.Null(inputs);
