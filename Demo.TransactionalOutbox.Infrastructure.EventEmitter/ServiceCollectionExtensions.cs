@@ -15,7 +15,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddMassTransit(mt =>
         {
-            mt.UsingRabbitMq((context, configurator) =>
+            mt.UsingAzureServiceBus((context, configurator) =>
             {
                 configurator.Host(configuration.GetConnectionString("MessageBroker"));
                 configurator.ConfigureEndpoints(context);

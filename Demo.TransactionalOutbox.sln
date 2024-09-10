@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Infrastructure.CosmosDb", "Demo.TransactionalOutbox.Infrastructure.CosmosDb\Demo.TransactionalOutbox.Infrastructure.CosmosDb.csproj", "{EAA4637B-7C2F-4DCD-8974-773CD0C66426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Transactionaloutbox.MessageRelay.CosmosDB", "Demo.Transactionaloutbox.MessageRelay.CosmosDB\Demo.Transactionaloutbox.MessageRelay.CosmosDB.csproj", "{D35B89E0-C638-452F-9359-82A62AECA2E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Transactionaloutbox.MessageRelay.Cosmos", "Demo.Transactionaloutbox.MessageRelay.Cosmos\Demo.Transactionaloutbox.MessageRelay.Cosmos.csproj", "{EE1BC443-0ACF-44B0-8CE4-70607008AFC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,9 +60,9 @@ Global
 		{EAA4637B-7C2F-4DCD-8974-773CD0C66426}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAA4637B-7C2F-4DCD-8974-773CD0C66426}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAA4637B-7C2F-4DCD-8974-773CD0C66426}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D35B89E0-C638-452F-9359-82A62AECA2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D35B89E0-C638-452F-9359-82A62AECA2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D35B89E0-C638-452F-9359-82A62AECA2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D35B89E0-C638-452F-9359-82A62AECA2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE1BC443-0ACF-44B0-8CE4-70607008AFC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1BC443-0ACF-44B0-8CE4-70607008AFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1BC443-0ACF-44B0-8CE4-70607008AFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1BC443-0ACF-44B0-8CE4-70607008AFC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

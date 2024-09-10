@@ -18,7 +18,7 @@ public static class ServiceCollectionExtensions
         {
             var connectionString = configuration.GetConnectionString("Database");
             var orderContainer = new CosmosClient(connectionString);
-            var collection = orderContainer.GetContainer("ms_talk", "orders");
+            var collection = orderContainer.GetContainer("WebShop", "Orders");
             return new OrderContainerContext(collection, sp.GetRequiredService<ILogger<OrderContainerContext>>());
         });
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<OrderContainerContext>());

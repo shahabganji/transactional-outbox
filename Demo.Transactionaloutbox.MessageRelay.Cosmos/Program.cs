@@ -1,5 +1,7 @@
-using Demo.TransactionalOutbox.FancyConsumer;
-using MassTransit;
+using Demo.TransactionalOutbox;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Events;
 
@@ -13,21 +15,16 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateLogger();
 
-
-var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices((host,services) =>
+var host = new HostBuilder()
+    .ConfigureFunctionsWorkerDefaults()
+    .ConfigureServices((context, services) =>
     {
-        services.AddMassTransit(mt =>
-        {
-            mt.UsingAzureServiceBus((context, configurator) =>
-            {
-                configurator.Host(host.Configuration.GetConnectionString("MessageBroker"));
-                configurator.ConfigureEndpoints(context);
-            });
-            mt.AddConsumer<OrderCreatedConsumer>();
-        });
+        services.AddApplicationInsightsTelemetryWorkerService();
+        services.ConfigureFunctionsApplicationInsights();
+
+        services.AddEventEmitter(context.Configuration);
     })
     .UseSerilog()
     .Build();
 
-await host.RunAsync();
+host.Run();
