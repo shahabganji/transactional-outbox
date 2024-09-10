@@ -4,7 +4,7 @@ using System.Text.Json.Nodes;
 using Demo.TransactionalOutbox.Domain.Abstractions;
 using Demo.TransactionalOutbox.Domain.Events;
 
-namespace Demo.Transactionaloutbox.MessageRelay.Cosmos.Extensions;
+namespace Demo.Transactionaloutbox.MessageRelay.CosmosDB.Extensions;
 
 internal static class JsonObjectExtensions
 {

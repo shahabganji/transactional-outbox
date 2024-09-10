@@ -1,11 +1,11 @@
 using System.Text.Json.Nodes;
 using Ardalis.GuardClauses;
 using Demo.TransactionalOutbox.Domain.Abstractions;
-using Demo.Transactionaloutbox.MessageRelay.Cosmos.Extensions;
+using Demo.Transactionaloutbox.MessageRelay.CosmosDB.Extensions;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
-namespace Demo.Transactionaloutbox.MessageRelay.Cosmos;
+namespace Demo.Transactionaloutbox.MessageRelay.CosmosDB;
 
 public class MessageRelay
 {

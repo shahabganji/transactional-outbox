@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.TransactionalOutbox.Infrastructure.CosmosDb", "Demo.TransactionalOutbox.Infrastructure.CosmosDb\Demo.TransactionalOutbox.Infrastructure.CosmosDb.csproj", "{EAA4637B-7C2F-4DCD-8974-773CD0C66426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Transactionaloutbox.MessageRelay.Cosmos", "Demo.Transactionaloutbox.MessageRelay.Cosmos\Demo.Transactionaloutbox.MessageRelay.Cosmos.csproj", "{EE1BC443-0ACF-44B0-8CE4-70607008AFC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Transactionaloutbox.MessageRelay.CosmosDB", "Demo.Transactionaloutbox.MessageRelay.CosmosDB\Demo.Transactionaloutbox.MessageRelay.CosmosDB.csproj", "{EE1BC443-0ACF-44B0-8CE4-70607008AFC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
